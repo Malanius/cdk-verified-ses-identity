@@ -1,6 +1,6 @@
 {
   "name": "@malanius/cdk-verified-ses-domain",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "author": {
     "name": "Malanius Privierre",
     "email": "malaniusprivierre@gmail.com"
@@ -10,7 +10,12 @@
     "url": "https://github.com/Malanius/cdk-verified-ses-domain.git"
   },
   "license": "Apache-2.0",
-  "keywords": ["aws", "cdk", "ses", "verify"],
+  "keywords": [
+    "aws",
+    "cdk",
+    "ses",
+    "verify"
+  ],
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "scripts": {
