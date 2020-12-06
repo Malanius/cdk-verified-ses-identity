@@ -6,8 +6,8 @@ import * as cr from '@aws-cdk/custom-resources';
 import * as path from 'path';
 
 export interface VerifiedSESIdentityProps {
-  domainPrefix: string;
   baseDomain: string;
+  domainPrefix?: string;
 }
 
 export class VerifiedSESIdentity extends cdk.Construct {
@@ -59,11 +59,15 @@ export class VerifiedSESIdentity extends cdk.Construct {
       onEventHandler: handler,
     });
 
+    const sesDomain = props.domainPrefix
+      ? `${props.domainPrefix}.${props.baseDomain}`
+      : props.baseDomain;
+
     new cdk.CustomResource(this, 'SESRecords', {
       serviceToken: provider.serviceToken,
       properties: {
         HostedZoneId: zone.hostedZoneId,
-        SESDomain: `${props.domainPrefix}.${props.baseDomain}`,
+        SESDomain: sesDomain,
       },
     });
   }
