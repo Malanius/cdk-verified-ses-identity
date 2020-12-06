@@ -1,5 +1,5 @@
 {
-  "name": "@malanius/cdk-verified-ses-domain",
+  "name": "@malanius/cdk-verified-ses-identity",
   "version": "1.0.0",
   "author": {
     "name": "Malanius Privierre",
@@ -7,7 +7,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Malanius/cdk-verified-ses-domain.git"
+    "url": "https://github.com/Malanius/cdk-verified-ses-identity.git"
   },
   "license": "Apache-2.0",
   "keywords": [

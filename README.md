@@ -1,4 +1,4 @@
-# CKD Verified SES domain
+# CKD Verified SES identity
 
 This construct library allows you to create SES identity with identity and DKIM verification records under a hosted zone in Route53.
 
@@ -12,13 +12,13 @@ So you won't be able to create and verify identity for `example.xyz` itself, but
 1. Install the construct library:
 
    ```bash
-   npm i @malanius/cdk-verified-ses-domain
+   npm i @malanius/cdk-verified-ses-identity
    ```
 
 1. Import the construct:
 
    ```typescript
-   import {VerifiedSESIdentity} from '@malanius/cdk-verified-ses-domain';
+   import {VerifiedSESIdentity} from '@malanius/cdk-verified-ses-identity';
    ```
 
 1. Use the construct in your stack:
@@ -32,4 +32,4 @@ So you won't be able to create and verify identity for `example.xyz` itself, but
 
 ## Interesting points
 
-- update of the identity is handled by creation and verification of new domain and returned to CFN, when the outputed physical ID returned from handler differs from the previous one CFN automatically calls the delete operation with previous physical ID
+- update of the identity is handled by creation and verification of new identity and returned to CFN, when the outputed physical ID returned from custom resource handler differs from the previous one CFN automatically calls the delete operation with previous physical ID
