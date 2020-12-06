@@ -4,6 +4,7 @@
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "scripts": {
+    "clean": "rimraf **/*.js **/*.d.ts",
     "build": "tsc",
     "watch": "tsc -w",
     "test": "jest"
@@ -12,7 +13,9 @@
     "@aws-cdk/assert": "1.76.0",
     "@types/jest": "^26.0.10",
     "@types/node": "10.17.27",
+    "aws-sdk": "^2.804.0",
     "jest": "^26.4.2",
+    "rimraf": "^3.0.2",
     "ts-jest": "^26.2.0",
     "typescript": "~3.9.7"
   },
@@ -20,6 +23,10 @@
     "@aws-cdk/core": "1.76.0"
   },
   "dependencies": {
-    "@aws-cdk/core": "1.76.0"
+    "@aws-cdk/aws-iam": "^1.76.0",
+    "@aws-cdk/aws-lambda": "^1.76.0",
+    "@aws-cdk/aws-route53": "^1.76.0",
+    "@aws-cdk/core": "1.76.0",
+    "@aws-cdk/custom-resources": "^1.76.0"
   }
 }
