@@ -2,10 +2,9 @@
 
 This construct library allows you to create SES identity with identity and DKIM verification records under a hosted zone in Route53.
 
-## Limitations
+## Requirements
 
-It's not possible to create and verify hosted zone itself with this construct. This construct expects that you already have a hosted zone in Route53 under which you are creating the new SES identity domain.
-So you won't be able to create and verify identity for `example.xyz` itself, but only for any 'sub-domain' like `mail.example.xyz`.
+Any domain identity you're creating and verifying with this construct must be under already existing hosted zone in Route53. Domains hosted anywhere else are not supported.
 
 ## Usage
 
@@ -25,7 +24,9 @@ So you won't be able to create and verify identity for `example.xyz` itself, but
 
    ```typescript
    const identity = new VerifiedSESIdentity(this, 'Identity', {
+     // Hosted zone domain name under which the verification records are created
      baseDomain: 'example.xyz',
+     // Optional, will be prepednded to base domain name, i.e. mail.example.xyz
      domainPrefix: 'mail',
    });
    ```
