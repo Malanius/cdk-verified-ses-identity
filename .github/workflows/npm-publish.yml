@@ -1,0 +1,23 @@
+name: npm-publish
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  npm-publish:
+    name: npm-publish
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '15.x'
+          registry-url: 'https://registry.npmjs.org'
+      - run: npm ci
+      # - run: npm test #TODO: enable when tests are done
+      - run: npm publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
