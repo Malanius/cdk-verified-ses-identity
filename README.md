@@ -1,12 +1,35 @@
-# Welcome to your CDK TypeScript Construct Library project!
+# CKD Verified SES domain
 
-You should explore the contents of this project. It demonstrates a CDK Construct Library that includes a construct (`CdkSesVerifier`)
-which contains an Amazon SQS queue that is subscribed to an Amazon SNS topic.
+This construct library allows you to create SES identity with identity and DKIM verification records under a hosted zone in Route53.
 
-The construct defines an interface (`CdkSesVerifierProps`) to configure the visibility timeout of the queue.
+## Limitations
 
-## Useful commands
+It's not possible to create and verify hosted zone itself with this construct. This construct expects that you already have a hosted zone in Route53 under which you are creating the new SES identity domain.
+So you won't be able to create and verify identity for `example.xyz` itself, but only for any 'sub-domain' like `mail.example.xyz`.
 
- * `npm run build`   compile typescript to js
- * `npm run watch`   watch for changes and compile
- * `npm run test`    perform the jest unit tests
+## Usage
+
+1. Install the construct library:
+
+   ```bash
+   npm i @malanius/cdk-verified-ses-domain
+   ```
+
+1. Import the construct:
+
+   ```typescript
+   import {VerifiedSESIdentity} from '@malanius/cdk-verified-ses-domain';
+   ```
+
+1. Use the construct in your stack:
+
+   ```typescript
+   const identity = new VerifiedSESIdentity(this, 'Identity', {
+     baseDomain: 'example.xyz',
+     domainPrefix: 'mail',
+   });
+   ```
+
+## Interesting points
+
+- update of the identity is handled by creation and verification of new domain and returned to CFN, when the outputed physical ID returned from handler differs from the previous one CFN automatically calls the delete operation with previous physical ID
