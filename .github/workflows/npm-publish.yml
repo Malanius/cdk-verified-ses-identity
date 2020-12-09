@@ -17,6 +17,7 @@ jobs:
           node-version: '15.x'
           registry-url: 'https://registry.npmjs.org'
       - run: npm ci
+      - run: npm run build
       # - run: npm test #TODO: enable when tests are done
       - run: npm publish --access public
         env:
