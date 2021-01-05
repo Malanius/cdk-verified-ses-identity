@@ -16,9 +16,9 @@ jobs:
         with:
           node-version: '15.x'
           registry-url: 'https://registry.npmjs.org'
-      - run: npm ci
-      - run: npm run build
-      # - run: npm test #TODO: enable when tests are done
-      - run: npm publish --access public
+      - run: yarn install --frozen-lockfile
+      - run: yarn build
+      # - run: yarn test #TODO: enable when tests are done
+      - run: yarn publish --non-interactive --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
