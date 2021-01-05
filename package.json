@@ -1,6 +1,6 @@
 {
   "name": "@malanius/cdk-verified-ses-identity",
-  "version": "1.77.0",
+  "version": "1.78.0",
   "author": {
     "name": "Malanius Privierre",
     "email": "malaniusprivierre@gmail.com"
@@ -25,7 +25,7 @@
     "test": "jest"
   },
   "devDependencies": {
-    "@aws-cdk/assert": "1.77.0",
+    "@aws-cdk/assert": "1.78.0",
     "@types/jest": "^26.0.10",
     "@types/node": "10.17.27",
     "aws-sdk": "^2.804.0",
@@ -38,10 +38,10 @@
     "@aws-cdk/core": "1.77.0"
   },
   "dependencies": {
-    "@aws-cdk/aws-iam": "1.77.0",
-    "@aws-cdk/aws-lambda": "1.77.0",
-    "@aws-cdk/aws-route53": "1.77.0",
-    "@aws-cdk/core": "1.77.0",
-    "@aws-cdk/custom-resources": "1.77.0"
+    "@aws-cdk/aws-iam": "1.78.0",
+    "@aws-cdk/aws-lambda": "1.78.0",
+    "@aws-cdk/aws-route53": "1.78.0",
+    "@aws-cdk/core": "1.78.0",
+    "@aws-cdk/custom-resources": "1.78.0"
   }
 }
