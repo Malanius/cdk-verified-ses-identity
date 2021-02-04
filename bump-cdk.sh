@@ -13,7 +13,6 @@ yarn add --exact \
     "@aws-cdk/aws-iam@${CDK_VERSION}" \
     "@aws-cdk/aws-lambda@${CDK_VERSION}" \
     "@aws-cdk/aws-route53@${CDK_VERSION}" \
-    "@aws-cdk/core@${CDK_VERSION}" \
     "@aws-cdk/custom-resources@${CDK_VERSION}"
 
 yarn add --peer --exact \
