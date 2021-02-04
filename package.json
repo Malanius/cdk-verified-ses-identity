@@ -41,7 +41,6 @@
     "@aws-cdk/aws-iam": "1.87.1",
     "@aws-cdk/aws-lambda": "1.87.1",
     "@aws-cdk/aws-route53": "1.87.1",
-    "@aws-cdk/core": "1.87.1",
     "@aws-cdk/custom-resources": "1.87.1"
   }
 }
