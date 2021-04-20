@@ -1,6 +1,6 @@
 {
   "name": "@malanius/cdk-verified-ses-identity",
-  "version": "1.98.0",
+  "version": "1.99.0",
   "author": {
     "name": "Malanius Privierre",
     "email": "malaniusprivierre@gmail.com"
@@ -25,7 +25,7 @@
     "test": "jest"
   },
   "devDependencies": {
-    "@aws-cdk/assert": "1.98.0",
+    "@aws-cdk/assert": "1.99.0",
     "@types/jest": "^26.0.10",
     "@types/node": "10.17.27",
     "aws-sdk": "^2.804.0",
@@ -35,12 +35,12 @@
     "typescript": "~3.9.7"
   },
   "peerDependencies": {
-    "@aws-cdk/core": "1.98.0"
+    "@aws-cdk/core": "1.99.0"
   },
   "dependencies": {
-    "@aws-cdk/aws-iam": "1.98.0",
-    "@aws-cdk/aws-lambda": "1.98.0",
-    "@aws-cdk/aws-route53": "1.98.0",
-    "@aws-cdk/custom-resources": "1.98.0"
+    "@aws-cdk/aws-iam": "1.99.0",
+    "@aws-cdk/aws-lambda": "1.99.0",
+    "@aws-cdk/aws-route53": "1.99.0",
+    "@aws-cdk/custom-resources": "1.99.0"
   }
 }
