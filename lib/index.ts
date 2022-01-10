@@ -1,8 +1,9 @@
-import * as cdk from '@aws-cdk/core';
-import * as iam from '@aws-cdk/aws-iam';
-import * as lambda from '@aws-cdk/aws-lambda';
-import * as route53 from '@aws-cdk/aws-route53';
-import * as cr from '@aws-cdk/custom-resources';
+import * as cdk from 'aws-cdk-lib';
+import * as iam from 'aws-cdk-lib/aws-iam';
+import * as lambda from 'aws-cdk-lib/aws-lambda';
+import * as route53 from 'aws-cdk-lib/aws-route53';
+import * as cr from 'aws-cdk-lib/custom-resources';
+import {Construct} from 'constructs';
 import * as path from 'path';
 
 export interface VerifiedSESIdentityProps {
@@ -10,12 +11,8 @@ export interface VerifiedSESIdentityProps {
   domainPrefix?: string;
 }
 
-export class VerifiedSESIdentity extends cdk.Construct {
-  constructor(
-    scope: cdk.Construct,
-    id: string,
-    props: VerifiedSESIdentityProps
-  ) {
+export class VerifiedSESIdentity extends Construct {
+  constructor(scope: Construct, id: string, props: VerifiedSESIdentityProps) {
     super(scope, id);
 
     const zone = route53.HostedZone.fromLookup(this, 'HostedZone', {
