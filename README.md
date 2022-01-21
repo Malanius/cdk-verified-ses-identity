@@ -34,3 +34,8 @@ Any domain identity you're creating and verifying with this construct must be un
 ## Interesting points
 
 - update of the identity is handled by creation and verification of new identity and returned to CFN, when the outputed physical ID returned from custom resource handler differs from the previous one CFN automatically calls the delete operation with previous physical ID
+
+## Note on versioning
+
+For CDK v1, this construct version followed CDK version due to occuring discrepancies between module versions used nd CDK app and this construct. This could happen when app was initialized on certain version and this module was instaled at later time.
+Since CDK v2 has all modules packed inside single package dependency, this can no longer happen so v2 of this construct lib specifies `"aws-cdk-lib": "^2.0.0"` only and doesn't follow the CDK version anymore and uses SemVer on it's own.
