@@ -4,7 +4,6 @@ set -o errexit # Exit on failure
 set -o nounset # Prevent using undeclared variables
 
 CDK_VERSION=${1}
-git flow release start "v${CDK_VERSION}"
 yarn version --no-git-tag-version --new-version ${CDK_VERSION}
 
 echo "Updating CDK core peer dependency to version ${CDK_VERSION}"
@@ -25,13 +24,9 @@ yarn add --dev --exact \
 MESSAGE="Bump version & CDK to ${CDK_VERSION}"
 
 git commit --all --message "${MESSAGE}"
-
-GIT_MERGE_AUTOEDIT=no git flow release finish \
-    --push \
-    --pushtag \
-    --nokeep \
-    --message "${MESSAGE}" \
-    "v${CDK_VERSION}"
+git tag "${CDK_VERSION}"
+git push
+git push "v${CDK_VERSION}"
 
 set +o errexit # Exit on failure
 set +o nounset # Prevent using undeclared variables
