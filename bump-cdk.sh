@@ -26,7 +26,7 @@ MESSAGE="Bump version & CDK to ${CDK_VERSION}"
 git commit --all --message "${MESSAGE}"
 git tag "${CDK_VERSION}"
 git push
-git push "v${CDK_VERSION}"
+git push origin "${CDK_VERSION}"
 
 set +o errexit # Exit on failure
 set +o nounset # Prevent using undeclared variables
