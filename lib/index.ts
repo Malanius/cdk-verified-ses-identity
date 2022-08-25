@@ -23,7 +23,7 @@ export class VerifiedSESIdentity extends cdk.Construct {
     });
 
     const handler = new lambda.Function(this, 'VerificationHandler', {
-      runtime: lambda.Runtime.NODEJS_12_X,
+      runtime: lambda.Runtime.NODEJS_14_X,
       timeout: cdk.Duration.seconds(10),
       handler: 'index.onEvent',
       code: lambda.Code.fromAsset(path.join(__dirname, '../handler')),
