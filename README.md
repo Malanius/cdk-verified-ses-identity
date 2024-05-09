@@ -1,5 +1,8 @@
 # CKD Verified SES identity
 
+> [!WARNING]
+> This construct is now deprecated and no longer maintained. Use CDK SES [EmailIdentity](https://docs.aws.amazon.com/cdk/api/v2/docs/aws-cdk-lib.aws_ses.EmailIdentity.html) instead. It does the same thing directly in CDK without the need for a custom handler and allows you to set grants on the identity as well.
+
 This construct library allows you to create SES identity with identity and DKIM verification records under a hosted zone in Route53.
 
 ## Requirements
