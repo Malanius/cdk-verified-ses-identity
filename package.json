@@ -1,6 +1,6 @@
 {
   "name": "@malanius/cdk-verified-ses-identity",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "author": {
     "name": "Malanius Privierre",
     "email": "malaniusprivierre@gmail.com"
